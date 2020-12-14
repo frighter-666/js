@@ -1,0 +1,107 @@
+/*
+* @Author: 宋明睿
+* @Date:   2020-11-27 17:26:32
+* @Last Modified by:   宋明睿
+* @Last Modified time: 2020-11-30 15:35:49
+*/
+
+/*重置浏览器样式*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+/*清除浮动*/
+
+.clear:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+/*ul浮动*/
+.leftUl{
+	float: left;
+	margin-top: 120px;
+	display: inline-block;
+}
+.rightUl{
+	float: right;
+	margin-top: 120px;
+}
+
+/*边框*/
+.text{
+	outline:none;
+	border: none;
+	padding: 10px;
+	margin-right: 0px;
+}
+.textFather{
+	border-style: solid;
+	border-width: 1px;
+}
+
+/*边距*/
+textUnder{
+	margin: 6px 0 6px 0;
+	color: gray;
+	padding: 0px;
+}
+passwordUnder{
+	margin: 6px 0 6px 0;
+	color: gray;
+}
+.leftUl li{
+	padding: 5px;
+}
+.rightUl li{
+	padding: 5px;
+	margin-bottom: 40px;
+	color: red;
+}
+span{
+
+	display: inline-block;
+	padding-left: 10px;
+	width: 50px;
+	
+}
+#passwordIn{
+	margin-right: 10px;
+}
+
+/*按钮*/
+.Btn{
+	display: block;
+	background-color: red;
+	font-size: 16px;
+	text-align: center;
+	color: white;
+	width: 258px;
+	height: 50px;
+}
+
+
+form{
+	position: absolute;
+}
+.rightUl{
+	position: relative;
+	top: 0px;
+	/* right: 100px; */
+}

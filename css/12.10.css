@@ -1,0 +1,79 @@
+/*
+* @Author: 宋明睿
+* @Date:   2020-12-04 21:03:51
+* @Last Modified by:   宋明睿
+* @Last Modified time: 2020-12-07 13:54:02
+*/
+/*重置浏览器样式*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/*清除浮动*/
+
+.clear:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.container{
+	width: 1200px;
+	margin: 0 auto;
+
+}
+.onBefore{
+	background-color: gray;
+	position: absolute;
+	top: 0px;
+	left: 200px;
+	width: 520px;
+	height: 500px;
+	
+}
+.onAfter{
+	background-color: gray;
+	position: absolute;
+	top: 0px;
+	left: 200px;
+	width: 500px;
+	height: 500px;	
+	display: none;
+}
+.under{
+	background-color: white;
+	width: 500px;
+	height: 500px;
+	margin-left: 40px;
+}
+
+#timeBack{
+	float: left;
+}
+#score{
+	float: right;
+}
+
+#random{
+	float: left;
+}
+
+ul{
+	height: 300px;
+	overflow: scroll;
+}
+
+.sco{
+	display: inline-block;
+	margin-left: 400px;
+}

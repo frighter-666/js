@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/last.css">
+	
+</head> 
+<body>
+	<div class="clear containerOn">
+		<div class="one clear">
+			<img src="image/logotc.png" alt="">
+			<ul>
+				<li><a href="#"  id="jumpTong0">首页</a></li>
+				<li id="jumpTong1"><a href="#">热门路线</a></li>
+				<li id="jumpTong2"><a href="#">签证推荐</a></li>
+				<li id="jumpTong3"><a href="#">酒店预订</a></li>
+				<li id="jumpTong4"><a href="#">使命愿景</a></li>
+			</ul>
+		</div>
+		<p class="title">我的旅游史</p>
+		<div class="banner">
+			<img src="./image/0.jpg" alt="" id="pic">
+		</div>
+		<div class="two clear">
+			<div class="mid">
+				<ul class="posUl">
+					<li style="margin-right: 2px;margin-bottom: 4px; height: 562px;" class="mouse" >
+						<img src="image/visa1.jpg" alt="" class="left" >
+						<div class="fir">
+							<p><span class="size1">日本旅游签证</span><span class="size2"> ¥420/人</span></p>
+						</div>
+					</li>
+					<li style="margin-right: 2px;margin-bottom: 2px;"class="mouse" >
+						<img src="image/visa2.jpg" alt="" class="kong">
+						<div class="sec">
+							<p><span class="size1">新加坡旅游签证</span><span class="size2"> ¥370/人</span></p>
+						</div>
+					</li>
+					<li style="margin-left: 2px; margin-bottom: 2px"class="mouse" >
+						<img src="image/visa3.jpg" alt="" class="kong" >
+						<div class="sec">
+							<p><span class="size1">马来西亚旅游签证</span><span class="size2"> ¥450/人</span></p>
+						</div>
+					</li>
+					<li style="margin-top: 2px;margin-right: 2px;"class="mouse" >
+						<img src="image/visa4.jpg" alt="" class="kong">
+						<div class="sec">
+							<p><span class="size1">申根旅游签证</span><span class="size2"> ¥999/人</span></p>
+						</div>
+					</li>
+					<li style="margin-left: 2px;margin-top: 2px;"class="mouse" >
+						<img src="image/visa5.jpg" alt="" class="kong">
+						<div class="sec">
+							<p><span class="size1">美国旅游签证</span><span class="size2"> ¥1380/人</span></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<form class="clear jsLoc">
+			<div class="myLoveLocations clear">
+				<p>我喜欢的地方</p>
+				<input type="text" id="txt">
+				<button id="add" type="button">添加</button>
+			</div>
+			<div class="randomLocation">
+				<button id="randomAdd" type="button">下一个随机地点</button>
+			</div>
+		</form>
+		
+		<div class="jumpToQiongYou">
+			<p><a id="jump" href="#">去穷游网看看</a></p>
+			
+		</div>
+		<div class="three">
+			<p>苏ICP备000号、2014-2017版权所有</p>
+		</div>
+	</div>
+	<div class="containerUnder clear">
+		<p id="timeBack">5</p>
+	</div>
+</body>
+<script>
+		//图片浏览
+		var i=0;
+		window.onload = function(){
+			var imgs = document.getElementById("pic");
+			imgs.onclick = function(){
+				i = (++i)%5;
+				imgs.src = "./image/"+i+".jpg";
+			}
+		}
+		//添加喜欢的地点
+		var txtReturn = document.getElementById("txt");
+		var myLoveLocationsAdd = document.getElementsByClassName("myLoveLocations")[0];
+		var btnAdd = document.getElementById("add");
+		var ulAdd = document.createElement("ul");
+		var brAdd = document.createElement("br");
+		myLoveLocationsAdd.appendChild(brAdd);
+		var liAdd;
+		myLoveLocationsAdd.appendChild(ulAdd);
+		ulAdd.setAttribute("class","clear");
+		btnAdd.onclick = function(){
+			if(txtReturn.value!=null){
+				liAdd = document.createElement("li");
+				liAdd.innerHTML = txtReturn.value;
+				ulAdd.appendChild(liAdd);
+				txtReturn.value = null;
+				txtReturn.focus();
+			}
+		}
+		//下一个随机地点
+		var randomLocationReturn = document.getElementsByClassName("randomLocation")[0];
+		var randomAddReturn = document.getElementById("randomAdd");
+		var txtCreate = document.createElement("p");
+		randomLocationReturn.appendChild(txtCreate);
+		var loc = ["河北", "天津", "山东", "山西", "河南", "重庆", "北京", "陕西", "内蒙古", "西藏", "厦门"]
+		randomAddReturn.onclick = function(){
+			var randomNum = Math.floor(Math.random()*11);
+			txtCreate.innerHTML = loc[randomNum];
+		}
+		//跳转
+		var jumpToQiongYouReturn = document.getElementsByClassName("jumpToQiongYou")[0];
+		var jumpReturn = document.getElementById("jump");
+		var containerReturn = document.getElementsByClassName("containerOn")[0];
+		var timeBackReturn = document.getElementById("timeBack");
+		var msg;
+		jumpReturn.onclick = function(){
+			containerReturn.setAttribute("class","containerAfter");
+			msg = setInterval(divOn,1000)
+		}
+		function divOn(){
+			var num = timeBackReturn.innerHTML;
+			num = num-1;
+			document.getElementById("timeBack").innerHTML = num;
+			if(num==0){
+				clearInterval(msg);
+				window.location.href = "https://www.qyer.com/";
+			}
+		}
+		//打开同程页面
+		var jumpTongReturn0 = document.getElementById("jumpTong0");
+		var jumpTongReturn1 = document.getElementById("jumpTong1");
+		var jumpTongReturn2 = document.getElementById("jumpTong2");
+		var jumpTongReturn3 = document.getElementById("jumpTong3");
+		var jumpTongReturn4 = document.getElementById("jumpTong4");
+		
+		jumpTongReturn0.onclick = function(){
+			window.open("https://www.ly.com/?refid=4140683");
+		}
+		jumpTongReturn1.onclick = function(){
+			window.open("https://www.ly.com/?refid=4140683");
+		}
+		jumpTongReturn2.onclick = function(){
+			window.open("https://www.ly.com/?refid=4140683");
+		}
+		jumpTongReturn3.onclick = function(){
+			window.open("https://www.ly.com/?refid=4140683");
+		}
+		jumpTongReturn4.onclick = function(){
+			window.open("https://www.ly.com/?refid=4140683");
+		}
+		//改变背景
+		var bac = document.body; 
+		bac.style.backgroundImage="url(./image/星空.jpg)";
+		//鼠标
+		var lis = document.getElementsByClassName("mouse");
+		for (var i = 0; i < lis.length; i++) {
+			lis[i].onmouseover = function (e) {
+				var e = e || window.event;
+				this.myTitle = this.lastElementChild.firstElementChild.firstElementChild.innerHTML;
+				this.title = "";
+				var tooltip = document.createElement('div');
+				tooltip.id = "tooltip";
+				tooltip.innerHTML = this.myTitle;
+				tooltip.style.position = "fixed";
+				tooltip.style.left = e.clientX +0 + "px";
+				tooltip.style.top = e.clientY +0 + "px";
+				bac.appendChild(tooltip);
+			};
+			lis[i].onmousemove = function (e) {
+				var e = e || window.event;
+				var tooltip = document.getElementById('tooltip');
+				tooltip.style.left = e.clientX + 10 + "px";
+				tooltip.style.top = e.clientY + 10 + "px";
+			};
+			lis[i].onmouseout = function () {
+				var tooltip = document.getElementById('tooltip');
+				this.title = this.myTitle;
+				document.body.removeChild(tooltip);
+			}
+		}
+	</script>
+	</html>
